@@ -1,0 +1,32 @@
+.carousel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+  
+  .carousel__image {
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .carousel__button {
+    background-image: url("../../../public/assets/images/Dropdown.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .prev {
+    transform: rotate(90deg);
+  }
+  
+  .next {
+    transform: rotate(-90deg);
+  }
+  
