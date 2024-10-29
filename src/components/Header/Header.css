@@ -1,0 +1,12 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: flex-start;
+    padding: 8px 16px 8px 16px;
+    background-color: black;
+}
+
+.header__logo{
+    margin: 0;
+}

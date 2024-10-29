@@ -1,0 +1,17 @@
+.footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 20px 20px;
+    background-color: black;
+    color: grey;
+}
+
+.footer__socials{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.footer__text{
+
+}
