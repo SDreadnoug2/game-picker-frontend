@@ -14,19 +14,38 @@
     background-image: url("../../../public/assets/images/Dropdown.svg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover; 
-    text-decoration: none;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
     outline: none;
     cursor: pointer;
     width: 40px;
     height: 40px;
+    transition: transform 0.2s ease-in-out;
   }
   
   .prev {
     transform: rotate(90deg);
   }
+
+  .prev:hover{
+    transform: translateX(-2px) rotate(90deg);
+  }
+
+  .prev:active{
+    transform: translateX(-5px) rotate(90deg);
+  }
   
   .next {
     transform: rotate(-90deg);
+  }
+
+  .next:hover{
+    transform: translateX(2px) rotate(-90deg);
+  }
+
+  .next:active{
+    transform: translateX(5px) rotate(-90deg);
   }
   
