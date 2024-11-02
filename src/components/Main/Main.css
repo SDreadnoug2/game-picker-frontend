@@ -23,16 +23,22 @@
     transition: scale 0.3s cubic-bezier(1, -0.08, 0, 1.01);
 }
 
+
+
 .main__title:hover{
     scale: 120%;
 }
 
-
-
-
 .close-color{
     color: rgb(255, 0,0);
 }
+
+.main__floatingText{
+    position: absolute;
+    z-index: 999;
+}
+
+
 
 @keyframes scaler {
     from {

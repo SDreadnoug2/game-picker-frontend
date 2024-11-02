@@ -1,46 +1,60 @@
 import { useState, useEffect } from 'react'
 import './FloatingText.css'
 
-function floatingText() {
+function FloatingText() {
     const [games, setGames] = useState([]);
-
-    setGames([{name: 'Battlefield', link: "#"}, {name: 'Halo 3', link: '#'}, {name: 'Fallout 4', link: '#'}]);
+    const [spawnedGames, setSpawnedGames] = useState([]);
+    const spawnRate = 200;
+    //This function should probably cache games in the browser if someone's visited the site before.
+    // It'll also be responsible for just setting games at the start, will probably rely on an API call.
+    useEffect(() => {
+        setGames([{name: 'Battlefield', link: "#"}, {name: 'Halo 3', link: '#'}, {name: 'Fallout 4', link: '#'}]);
+    },[])
 
 
     const spawnGame = () => {
         const game = games[Math.floor(Math.random() * games.length)]
         const gameRender = {
-            title: game.name,
+            title:  game.name.toUpperCase(),
             link: game.link,
-            speed: Math.random() * 4,
-            size: Math.random() * 3,
+            speed: Math.random() * (10 - 7) + 7,
+            size: Math.random() * (2 - 1) + 1,
             top: Math.random() * window.innerHeight,
+            id: crypto.randomUUID(),
         }
+        console.log(gameRender);
+        setSpawnedGames((previousSpawns) => [...previousSpawns, gameRender]);
     }
+
+    const deSpawnGame = (id) => {
+        setSpawnedGames((prevGames) => prevGames.filter((game) => game.id !== id));
+    };
 
     useEffect(() => {
         const spawnGames = setInterval(() => {
             spawnGame()
-        },(1000))
-    })
-    // In reality you'd want to make a GET request to steam, then have it return like 
-    // 40-50 game titles + their link, and that's it.
-    //You want to get a series of links for games and their steam page.
-    // Then, take those links, and convert them into objects, each with
-    // random speeds, heights, and sizes, so that they can be put
-    // into a list in React using key value pairs.
-    // remember to clean up after reaching other end of the page.
-    // To spawn something at an interval, React has a setInterval, in which
-    // you can pass a callback function to execute code every x ms.
-    // Once animation ends, remove.
-    //You'll also need to assign each one a value of "link" from it's original object,
-    // So hopefully you can request that information. 
+        },(spawnRate))
+        return () => clearInterval(spawnGames);
+    },[games])
+
+    useEffect(() => {
+        console.log(spawnedGames);
+    },[spawnedGames])
 
   return (
     <div className="floatingText">
-
+        {spawnedGames.map((game) => (
+            <a key={game.id} href={game.link} className='floatingText__game'
+            style={{
+                top: `${game.top}px`,
+                size: `${game.size}`,
+                animationDuration: `${game.speed}s`,
+            }}
+            onAnimationEnd={() => deSpawnGame(game.id)}
+            > {game.title} </a>
+        ))} 
     </div>
   )
 }
 
-export default floatingText
+export default FloatingText
