@@ -7,7 +7,7 @@ function Header() {
   return (
     <>
       <div className='header'>
-        <h2 className='header__logo'>Game Picker</h2>
+        <h2 className='header__logo'>GAME PICKER</h2>
         <Navigation/>
       </div>
     </>

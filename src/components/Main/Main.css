@@ -1,28 +1,133 @@
 .main{
-    height: 80vh;
+    height: 100vh;
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: 0;
+    flex-direction: row;
     position: relative;
+    
+}
+
+.main__text_container{
+    display: flex;
+    flex-direction: column;
 }
 
 .main__title{
-    font-size: 100%;
-    max-width: 95vw;
-    text-wrap: nowrap;
-    cursor: pointer;
-    word-wrap: break-word;
+    font-size: 4vw;
+    width: 100vw;
+    text-wrap: wrap;
+    margin:0 0 0 15px;
+    animation: loadIn 0.6s cubic-bezier(.3,0,0,1.02)
+}
+
+.main__find{
     margin: 0;
-    /*
-    animation: scaler 1s cubic-bezier(1, -0.08, 0, 1.01);
-    transition: scale 0.3s cubic-bezier(1, -0.08, 0, 1.01);
-    */
+    font-size: 25vw;
+    cursor: pointer;
+    line-height: 1;
+    transition: all 0.6s cubic-bezier(.3,0,0,1.02);
+}
+.main__find-container:hover .main__find{
+    transform: translateX(calc(7vw));
+    background: linear-gradient(90deg, #ff007a, #7a00ff, #00ffff, #ff007a);
+    background-size: 300%;
+    color: transparent; 
+    background-clip: text;
+    -webkit-background-clip: text; /* Required for Safari support */
+    animation: gradientAnimation 10s forwards ease-in-out;
+    text-shadow: none;
+    filter: blur(2px)
 }
 
-.close-color{
-    color: rgb(255, 0,0);
+.main__find-container{
+    margin: 25px 0 -50px 0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    animation: loadIn 0.3s cubic-bezier(.3,0,0,1);
 }
 
+.main__icon{
+    align-self: center;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(.3,0,0,1.02);
+    font-size: 16vw;
+    cursor: pointer;
+    filter: drop-shadow(0 0 2px #000000) drop-shadow(0 0 4px #000000)
+}
+
+.main__find-container:hover .main__icon{
+    opacity: 1;
+    transform: translateX(calc(12vw)) scale(110%);
+    animation: glowIn 1s ease forwards;
+}
+
+.main__icon:active{
+    animation: clicked 0.3s forwards;
+}
+
+.main__image{
+    position: fixed;
+    bottom: -300px;
+    right: 200px;
+    width: 800px;
+    max-width: 100%;
+    max-height: 100vh;
+    height: 800px;
+    animation: imageSpawn 2s cubic-bezier(.3,0,.21,1.07) forwards;
+}
+
+
+@keyframes imageSpawn {
+    from{
+        opacity: 0;
+        transform: translateY(300px) rotate(-95deg);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0) rotate(-23deg);
+    }
+}
+
+@keyframes gradientAnimation {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 100%;
+    }
+}
+
+@keyframes glowIn {
+    0% {
+        filter: drop-shadow(0 0 2px #000000) drop-shadow(0 0 4px #000000);    }
+    100% {
+        filter: drop-shadow(0 0 0px #000000) drop-shadow(0 0 0px #000000);
+    }
+}
+
+@keyframes loadIn {
+    0%{
+        opacity: 0;
+        transform: translateY(-5vw);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes clicked {
+    0%{
+        filter:blur(0);
+        color: black;
+    }
+    50%{
+        filter:blur(3px);
+        color: white;
+    }
+    100%{
+        filter:blur(0);
+        color: black;
+    }
+}
