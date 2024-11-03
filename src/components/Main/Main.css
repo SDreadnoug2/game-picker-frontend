@@ -5,58 +5,24 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: linear-gradient(120deg, #2879EB, #5462E3, #7454E3, #A354E3, #D154E3);
-    background-size: 300% 300%;
-    animation: gradientAnimation 10s ease-in-out infinite;
     margin: 0;
     position: relative;
 }
 
 .main__title{
-    margin-left: 44px;
-    font-size: 80px;
-    top: 50px;
+    font-size: 100%;
+    max-width: 95vw;
     text-wrap: nowrap;
     cursor: pointer;
-    border-radius: 50%;
+    word-wrap: break-word;
+    margin: 0;
+    /*
     animation: scaler 1s cubic-bezier(1, -0.08, 0, 1.01);
     transition: scale 0.3s cubic-bezier(1, -0.08, 0, 1.01);
-}
-
-
-
-.main__title:hover{
-    scale: 120%;
+    */
 }
 
 .close-color{
     color: rgb(255, 0,0);
 }
 
-.main__floatingText{
-    position: absolute;
-    z-index: 999;
-}
-
-
-
-@keyframes scaler {
-    from {
-        scale: 90%;
-    }
-    to {
-        scale: 100%;
-    }
-}
-
-@keyframes gradientAnimation {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }

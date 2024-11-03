@@ -7,8 +7,7 @@ function Main() {
 
   return (
       <div className='main'>
-           <FloatingText/>
-        <h1 className='main__title' >Find something new</h1>
+        <h1 className='main__title'>FIND SOMETHING NEW</h1>
       </div>
   )
 }
