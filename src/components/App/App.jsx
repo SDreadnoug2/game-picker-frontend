@@ -9,15 +9,13 @@ import Picker from '../Picker/Picker'
 import { PickerContext } from '../../utils/PickerContext'
 
 function App() {
-  const [picker, setPicker] = useState(false);
- 
+
   return (
     <>
       <div className='app'>
-        <PickerContext.Provider value={{picker, setPicker}}>
-        <Header/>
-        <Main/>
-        </PickerContext.Provider>
+          <Header/>
+          <Main/>
+          <Picker/>
       </div>
     </>
   )
