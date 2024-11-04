@@ -2,7 +2,7 @@
     height: 100vh;
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     position: relative;
     
 }
@@ -67,13 +67,8 @@
 }
 
 .main__image{
-    position: fixed;
-    bottom: -300px;
-    right: 200px;
-    width: 800px;
-    max-width: 100%;
-    max-height: 100vh;
-    height: 800px;
+    max-width: 50%;
+    align-self: flex-end;
     animation: imageSpawn 2s cubic-bezier(.3,0,.21,1.07) forwards;
 }
 
