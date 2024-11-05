@@ -13,7 +13,7 @@ function Picker() {
 
 
     return (
-        <div className='picker'>
+        <div className='picker slide_in'>
             <h3 className="picker__title">Let's see what you'll play!</h3>
             <h2 className="picker__title">You should try...</h2>
             <ImageCarousel images={images}/>
