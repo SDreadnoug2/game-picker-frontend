@@ -4,6 +4,13 @@
     justify-content: center;
     align-items: center;
     padding: 50px;
+    background-color: rgb(0, 0, 0, 0.5);
+    height: 100%;
+}
+
+.about__container{
+    background-color: black;
+    border-radius: 15px;
 }
 
 .about__title{
