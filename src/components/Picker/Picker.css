@@ -3,6 +3,37 @@
     height: 100vh;
 }
 
+.picker__buttons{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.picker__button{
+    font-size: 8vw;
+    border: none;
+    background-color: black;
+    color: white;
+    font-family: "DotGothic16", sans-serif;
+    cursor: pointer;
+}
+
+.picker__button-selected{
+    animation: selected 0.5s forwards;
+}
+/*
+.picker__button-selected:hover{
+    color: black;
+    background-color: white;
+}*/
+
+.picker__button-not-selected{
+    animation: notSelected 1s;
+    align-self: center;
+}
+
 .slide_in{
     animation: slideIn 1s cubic-bezier( 0.23, 0.01, 0, 1 ) forwards;
 }
@@ -14,4 +45,31 @@
     to{
         transform: translateX(0);
     }
+}
+
+@keyframes selected {
+    0%{
+        background-color: white;
+        color: black;
+    }
+    5%{
+        background-color: black;
+        color: white;
+    }
+    10%{
+        background-color: white;
+        color: black;
+    }
+    15%{
+        background-color: black;
+        color: white;
+    }
+    100%{
+        background-color: black;
+    }
+
+}
+
+@keyframes notSelected {
+    
 }
