@@ -18,11 +18,3 @@
   top: 36px;
   overflow: hidden;
 }
-
-.app__about{
-  position: absolute;
-  top: 36px;
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
-}

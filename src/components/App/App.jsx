@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react'
 import './App.css'
+import { useEffect, useState,} from 'react'
+import {Routes, Route, Navigate, useNavigate, useLocation} from 'react-router-dom'
 import Main from '../Main/Main'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
@@ -27,20 +28,29 @@ function App() {
     <activeModalContext.Provider value={{activeModal, setActiveModal, closeModal}}>
       <div className='app'>
           <Header/>
-          {activeModal === "about" && (
-            <div className="app__about">
-              <About/>
-            </div>
-          )}
-          {!showPicker && (
-          <div className="app__main">
-            <Main setNext={setNext} next={next}/>
-          </div>)}
-          {
-            showPicker && (
-              <Picker/>
-            )
-          }
+          <Routes>
+            <Route path="/about" 
+            element=
+              {activeModal === "about" && (
+                <div className="app__about">
+                  <About/>
+                </div>
+              )}
+              />
+            <Route>
+              path="/"
+              element=
+              {!showPicker && (
+              <div className="app__main">
+                <Main setNext={setNext} next={next}/>
+              </div>)}
+              {
+                showPicker && (
+                  <Picker/>
+                )
+              }
+            </Route>
+          </Routes>
       </div>
     </activeModalContext.Provider>
   )
