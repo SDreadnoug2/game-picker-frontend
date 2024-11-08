@@ -6,51 +6,41 @@ import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import Preloader from '../Preloader/Preloader'
 import About from '../About/About'
-import Picker from '../Picker/Picker'
+import Picker, { Library, SteamStore } from '../Picker/Picker'
 import activeModalContext from '../../utils/activeModal'
+import GameFinder from '../GameFinder/GameFinder'
+import {motion} from "framer-motion";
 
 function App() {
-
-  const [next, setNext] = useState(false);
-  const [showPicker, setShowPicker] = useState(false);
   const [activeModal, setActiveModal] = useState(null);
-  useEffect(() => {
-    if(next === true){
-      setTimeout(() => {setShowPicker(true)}, 500)
-    }
-  }, [next])
-
   const closeModal = () => setActiveModal("");
+  const navigate = useNavigate();
 
-
-  useEffect(() => console.log(activeModal), [activeModal])
   return (
     <activeModalContext.Provider value={{activeModal, setActiveModal, closeModal}}>
+      
       <div className='app'>
-          <Header/>
-          <Routes>
-            <Route path="/about" 
-            element=
-              {activeModal === "about" && (
-                <div className="app__about">
-                  <About/>
-                </div>
-              )}
-              />
-            <Route>
-              path="/"
-              element=
-              {!showPicker && (
-              <div className="app__main">
-                <Main setNext={setNext} next={next}/>
-              </div>)}
-              {
-                showPicker && (
-                  <Picker/>
-                )
-              }
-            </Route>
-          </Routes>
+      {activeModal === "about" && (
+        <div className="app__about">
+          <About/>
+        </div>
+      )}
+        <Header navigate={navigate}/>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Main navigate={navigate} />
+            }>
+          </Route>
+          <Route
+          path="picker/*"element={<Picker navigate={navigate}/>}>
+              <Route path='userlibrary' element={<GameFinder locale="library"/>} />
+              <Route path='steamstore' element={<GameFinder locale="steamstore"/>}/>             
+          </Route>
+        </Routes>
+
+
       </div>
     </activeModalContext.Provider>
   )
