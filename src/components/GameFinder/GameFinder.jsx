@@ -9,13 +9,13 @@ function GameFinder ({locale}) {
         ]
     
     return (
-        <div className='picker'>
-            <h3 className="picker__title">Let's see what you'll play!</h3>
-            <h2 className="picker__title">You should try...</h2>
+        <div className='GamePicker'>
+            <h3 className="GamePicker__title">Let's see what you'll play!</h3>
+            <h2 className="GamePicker__title">You should try...</h2>
             <ImageCarousel images={images}/>
-            <h3 className="picker__game-title">Half Life 3</h3>
-            <h3 className="picker__game-price">$24.99</h3>
-            <p className="picker__game-description">Half life Description</p>
+            <h3 className="GamePicker__title">Half Life 3</h3>
+            <h3 className="GamePicker__price">$24.99</h3>
+            <p className="GamePicker__description">Half life Description</p>
         </div>
     )
 }

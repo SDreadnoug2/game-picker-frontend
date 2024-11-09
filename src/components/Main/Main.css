@@ -6,6 +6,7 @@
     line-height: 0.9;
     position: relative;
     align-items: center;
+    margin-top: 24px;
 }
 
 .main__find{
@@ -51,14 +52,6 @@
     animation: slideOut 1s cubic-bezier( 0.87, 0.02, 0.13, 1 ) forwards;
 }
 
-@keyframes imageMovement {
-    from{
-        transform: translateY(80vw) rotate(0deg);
-    }
-    to{
-        transform: translateY(0) rotate(350deg);
-    }
-}
 
 @keyframes slideOut {
     from{

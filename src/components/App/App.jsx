@@ -6,7 +6,7 @@ import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import Preloader from '../Preloader/Preloader'
 import About from '../About/About'
-import Picker from '../Picker/Picker'
+import Libraries from '../Libraries/Libraries'
 import activeModalContext from '../../utils/activeModal'
 import GameFinder from '../GameFinder/GameFinder'
 import {AnimatePresence, motion} from "framer-motion";
@@ -36,8 +36,7 @@ function App() {
         )}
           <Header navigate={navigate}/>
           <AnimatePresence mode="wait">
-            <Routes location={location} key={location.pathname}>
-            
+            <Routes location={location}> 
               <Route
                 path="/"
                 element={
@@ -53,49 +52,12 @@ function App() {
                 }>
               </Route>
               <Route
-              path="libraries"    
-              element={
-                <motion.div
-                  initial="initial"
-                  animate="animate"
-                  exit="exit"
-                  variants={pageVariants}
-                  transition={{ duration: 0.5 }}
-                >
-                  <Picker navigate={navigate} />
-                </motion.div>
+              path="libraries/*"    
+              element={<Libraries navigate={navigate} />
               }
               >
-              </Route>
-              <Route
-              path="steamstore"    
-              element={
-                <motion.div
-                  initial="initial"
-                  animate="animate"
-                  exit="exit"
-                  variants={pageVariants}
-                  transition={{ duration: 0.5 }}
-                >
-                  <GameFinder/>
-                </motion.div>
-              }
-              >
-              </Route>
-              <Route
-              path="userlibrary"    
-              element={
-                <motion.div
-                  initial="initial"
-                  animate="animate"
-                  exit="exit"
-                  variants={pageVariants}
-                  transition={{ duration: 0.5 }}
-                >
-                  <GameFinder/>
-                </motion.div>
-              }
-              >
+                <Route path="steamstore" element={<GameFinder locale="steamstore"/>}></Route>
+                <Route path="userlibrary" element={<GameFinder locale="steamstore"/>}></Route>
               </Route>
             </Routes>
           </AnimatePresence>
