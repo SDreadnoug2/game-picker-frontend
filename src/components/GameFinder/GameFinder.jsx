@@ -1,5 +1,6 @@
 import "./GameFinder.css"
 import ImageCarousel from "../ImageCarousel/ImageCarousel";
+import { useContext } from "react";
 function GameFinder ({locale}) {
         const images = [
             "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/220/0000001864.600x338.jpg?t=1727742736",

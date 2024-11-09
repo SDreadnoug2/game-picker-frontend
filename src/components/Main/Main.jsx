@@ -3,9 +3,8 @@ import './Main.css'
 import steamSVG from "../../../public/assets/images/steam.svg";
 function Main({navigate}) {
 
-  const handleButtonClick = () => navigate('/picker');
+  const handleButtonClick = () => navigate('/libraries');
 
-console.log();
   return (
       <div className= "main">
             <h2 className='main__subtitle'>NEW GAME?</h2>
