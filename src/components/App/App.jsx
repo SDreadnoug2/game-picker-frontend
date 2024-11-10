@@ -15,6 +15,9 @@ import librarySelectionContext from '../../utils/librarySelectionContext'
 function App() {
   const [activeModal, setActiveModal] = useState(null);
   const [librarySelection, setLibrarySelection] = useState(null);
+  const [libraryGame, setLibraryGame] = useState({});
+  const [storeGame, setStoreGame] = useState({});
+
   const closeModal = () => setActiveModal("");
   const navigate = useNavigate();
   const location = useLocation();
@@ -24,6 +27,31 @@ function App() {
     animate: { opacity: 1, x: 0 },
     exit: { opacity: 0, x: 0 },
   };
+
+  const handleLibrarySearch = () =>{
+      /*api request for data*/
+      setLibraryGame({
+          /*hard coded for example usage*/
+          title: "half-life 2",
+          images: [ "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/220/0000001864.600x338.jpg?t=1727742736",
+              "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/220/header.jpg?t=1727742736",
+              "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/220/0000001872.600x338.jpg?t=1727742736",],
+          price: "$24.99",
+          description: "Half Life Description",
+      })
+  }
+  const handleStoreSearch = () =>{
+      /*api request for data*/
+      setStoreGame({
+          /*hard coded for example usage*/
+          title: "Fallout 4",
+          images: [ "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/220/0000001864.600x338.jpg?t=1727742736",
+              "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/220/header.jpg?t=1727742736",
+              "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/220/0000001872.600x338.jpg?t=1727742736",],
+          price: "$59.99",
+          description: "Fallout 4 Description",
+      })
+  }
 
   return (
     <librarySelectionContext.Provider value={{librarySelection, setLibrarySelection}}>
@@ -53,11 +81,11 @@ function App() {
               </Route>
               <Route
               path="libraries/*"    
-              element={<Libraries navigate={navigate} />
+              element={<Libraries/>
               }
               >
-                <Route path="steamstore" element={<GameFinder locale="steamstore"/>}></Route>
-                <Route path="userlibrary" element={<GameFinder locale="steamstore"/>}></Route>
+                <Route path="steamstore" element={<GameFinder search={() => handleLibrarySearch} gameInfo={libraryGame}/>}></Route>
+                <Route path="userlibrary" element={<GameFinder search={() => handleStoreSearch} gameInfo={storeGame}/>}></Route>
               </Route>
             </Routes>
           </AnimatePresence>

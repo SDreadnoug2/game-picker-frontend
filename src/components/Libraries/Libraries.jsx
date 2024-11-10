@@ -1,17 +1,9 @@
 
 import { useContext, useEffect, useState } from "react";
-import {Routes, Route, useNavigate, Outlet, useLocation} from 'react-router-dom'
-
+import {useNavigate, Outlet, useLocation} from 'react-router-dom'
 import "./Libraries.css"
 import { AnimatePresence, motion} from "framer-motion";
 function Libraries() {
-
-
-    const images = [
-        "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/220/0000001864.600x338.jpg?t=1727742736",
-        "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/220/header.jpg?t=1727742736",
-        "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/220/0000001872.600x338.jpg?t=1727742736",
-    ]
 
     const [library, setLibrary] = useState(null);
     const navigate = useNavigate();

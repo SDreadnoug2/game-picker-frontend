@@ -1,7 +1,8 @@
 .libraries{
-    border-top: solid 5px;
     height: 100vh;
+    width: 100%;
     font-family: "DotGothic16", sans-serif;
+    padding: 24px;
 }
 
 .libraries__button-container{
@@ -16,8 +17,12 @@
     border: none;
     background-color: black;
     color: white;
-
     cursor: pointer;
+    transition: scale 0.4s cubic-bezier(0,.87,.3,1.01);
+}
+
+.libraries__button:hover{
+    scale: 105%;
 }
 
 .libraries__empty{

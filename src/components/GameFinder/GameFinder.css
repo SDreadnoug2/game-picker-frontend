@@ -1,17 +1,29 @@
-.GamePicker{
+.GameFinder{
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 16px;
 }
 
-.GamePicker__title{
+.GameFinder__randomizer{
+    border-style: none;
+    background-color: black;
+    color: white;
 
 }
 
-.GamePicker__price{
+.GameFinder__title{
 
 }
 
-.GamePicker__description{
+.GameFinder__price{
+
+}
+
+.GameFinder__description{
 
 }
 
