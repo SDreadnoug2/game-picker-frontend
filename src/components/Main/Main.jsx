@@ -8,7 +8,7 @@ function Main({navigate}) {
 
   return (
     
-      <div className= "main">
+      <div className="main">
             <h2 className='main__subtitle'>NEW GAME?</h2>
         <h2 className="main__continue" onClick={handleButtonClick}>click to continue</h2>
         <AnimatePresence>

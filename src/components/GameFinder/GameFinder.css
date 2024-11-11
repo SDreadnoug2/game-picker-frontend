@@ -12,7 +12,7 @@
     border-style: none;
     background-color: black;
     color: white;
-
+    cursor: pointer;
 }
 
 .GameFinder__title{

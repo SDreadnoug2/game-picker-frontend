@@ -35,7 +35,7 @@ function Libraries() {
                 </div>
                 {library === null ? (
                     <div className="libraries__empty">
-                        <h2 className="libraries__empty-text">Please select a library</h2>
+                        <h2 className="libraries__empty-text">Please select a library.</h2>
                     </div>
                 ) 
                 : (
