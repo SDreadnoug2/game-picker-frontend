@@ -1,11 +1,10 @@
 .main{
     display:flex;
     flex-direction: column;
-    width: 100vw;
-    height: 100vh;
     line-height: 0.9;
-    position: relative;
     align-items: center;
+    justify-content: center;
+    height: 80vh;
 }
 
 .main__find{
@@ -38,42 +37,7 @@
     color:aqua;
 }
 
-.main__continue:hover .main__imaage{
-    transform: translateY((-10px));
-}
 
 .main__image{
-    max-width: 85%;
-    animation: imageMovement 1s cubic-bezier( 0.165, 0.84, 0.44, 1 ) forwards, rotate 15s linear infinite;
-}
-
-.slide_out{
-    animation: slideOut 1s cubic-bezier( 0.87, 0.02, 0.13, 1 ) forwards;
-}
-
-@keyframes imageMovement {
-    from{
-        transform: translateY(80vw) rotate(0deg);
-    }
-    to{
-        transform: translateY(0) rotate(350deg);
-    }
-}
-
-@keyframes slideOut {
-    from{
-        transform: translateY(0);
-    }
-    to{
-        transform: translateY(100vw);
-    }
-}
-
-@keyframes rotation {
-    from{
-        transform: rotate(0);
-    }
-    to{
-        transform: rotate(360deg);
-    }
+    max-width: 20%;
 }
