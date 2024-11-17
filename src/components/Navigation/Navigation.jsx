@@ -15,8 +15,9 @@ function Navigation() {
         <ul className='navigation__list'>
             <li className='navigation__item'>LOGIN TO STEAM</li>
             <li className='navigation__item' onClick={() => handleAbout()}>ABOUT</li>
-            <li className='navigation__item'>GITHUB</li>
-    
+            <li className='navigation__item'>
+              <a className='navigation__link' href="https://github.com/SDreadnoug2/game-picker-frontend" target='blank'>GITHUB</a>
+            </li>
         </ul>
       </div>
     </>

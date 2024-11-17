@@ -58,9 +58,14 @@ function App() {
       <activeModalContext.Provider value={{activeModal, setActiveModal, closeModal}}>
         <div className='app'>
         {activeModal === "about" && (
-          <div className="app__about">
-            <About/>
-          </div>
+            <motion.div
+            variants={pageVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{ duration: 0.5 }}>
+              <About closeModal={closeModal}/> 
+            </motion.div>
         )}
           <Header navigate={navigate}/>
           <AnimatePresence mode="wait">

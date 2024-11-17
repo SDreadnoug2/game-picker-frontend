@@ -14,6 +14,14 @@
     margin: 0;
 }
 
+.navigation__link{
+    text-decoration: none;
+}
+.navigation__link:visited{
+    text-decoration: none;
+    color: white;
+}
+
 .navigation__item{
     cursor: pointer;
     transition: transform  0.2s ease-in-out;
@@ -27,22 +35,6 @@
 .navigation__item:hover{
     transform: translateY(-2px);
 }
-
-.navigation__item::after {
-    content: "";
-    position: absolute;
-    bottom: -3px;
-    left: 50%;
-    width: 0;
-    height: 1px; 
-    background-color: white;
-    transition: width 0.4s ease, left 0.3s ease;
-  }
-  
-  .navigation__item:hover::after {
-    width: 100%;
-    left: 0;
-  }
 
 @keyframes clicked {
     0% {

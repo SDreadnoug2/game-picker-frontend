@@ -12,6 +12,13 @@
     gap: 20px;
 }
 
+.libraries__main{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
 .libraries__button{
     font-size: 4vw;
     border: none;
